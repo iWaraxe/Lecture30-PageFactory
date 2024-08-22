@@ -1,5 +1,6 @@
 package com.coherentsolutions.java.webauto.section01;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,6 +29,7 @@ public class Ex03DynamicLoadingPage extends PageBase {
      */
     public Ex03DynamicLoadingPage() {
         super();
+        //this.startButton = driver.findElement(By.id("finish"));
         PageFactory.initElements(driver, this);
     }
 

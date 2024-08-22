@@ -2,9 +2,9 @@ package com.coherentsolutions.java.webauto.section01.advanced;
 
 import com.coherentsolutions.java.webauto.section01.PageBase;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.*;
+
+import java.util.List;
 
 /**
  * This class demonstrates advanced usage of Page Factory annotations.
@@ -17,6 +17,18 @@ public class Ex05AdvancedPageFactoryExample extends PageBase {
 
     @FindBy(css = ".submit-button")
     private WebElement submitButton;
+
+    @FindBys({//AND
+         @FindBy(tagName = "div"),
+         @FindBy(className = "user-info")
+    })
+    private WebElement userInfo;
+
+    @FindAll({//OR
+           @FindBy(css = ".btn-primary"),
+           @FindBy(css = ".btn-secondary")
+    })
+    private List<WebElement> buttons;
 
     @FindBy(xpath = "//div[contains(@class, 'error-message')]")
     private WebElement errorMessage;
